@@ -1,11 +1,11 @@
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
-import { Sidebar } from "../../components/Sidebar";
-import { Header } from "../../components/Header";
+import { Sidebar } from "../components/Sidebar";
+import { Header } from "../components/Header";
 
 // TABLE
 import { Table, TableContainer } from "@chakra-ui/react";
-import TheadComponent from "./components/TheadComponent";
-import SubjectsNotes from "./components/SubjectsNotes";
+import TheadComponent from "../components/Buletim/TheadComponent";
+import SubjectsNotes from "../components/Buletim/SubjectsNotes";
 
 export default function Buletim() {
   return (
