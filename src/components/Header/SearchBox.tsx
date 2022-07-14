@@ -1,33 +1,31 @@
-import { InputGroup, Input, InputRightElement } from '@chakra-ui/react'
-import { RiSearchLine } from 'react-icons/ri'
+import { Flex, Icon, Input } from "@chakra-ui/react";
+import { RiSearchLine } from "react-icons/ri";
 
-export function SearchBox() {
+export function Search() {
   return (
-    <InputGroup
-      ml="6"
-      alignSelf="center"
+    <Flex
+      as="label"
       flex="1"
-      color="gray.200"
-      bgColor="gray.800"
-      borderRadius="full"
       py="4"
+      px="8"
+      ml="6"
       maxWidth={400}
+      alignSelf="center"
+      color="gray.200"
+      position="relative"
+      bg="gray.800"
+      borderRadius="full"
     >
       <Input
-        pl="8"
-        px="4"
-        mr="4"
         color="gray.50"
         variant="unstyled"
-        placeholder="Buscar na plataforma"
-        _placeholder={{ color: 'gray.400' }}
-      />
-      <InputRightElement
+        px="4"
         mr="4"
-        h="100%"
-        pointerEvents="none"
-        children={<RiSearchLine fontSize="20" color="gray.300" />}
+        placeholder="Buscar na plataforma"
+        _placeholder={{ color: "gray.400" }}
       />
-    </InputGroup>
-  )
+
+      <Icon as={RiSearchLine} fontSize="20" />
+    </Flex>
+  );
 }
