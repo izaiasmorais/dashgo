@@ -29,6 +29,7 @@ export default function Subjects() {
           <SimpleGrid
             flex="1"
             gap="4"
+            maxH="520px"
             minChildWidth="320px"
             alignItems="flex-start"
           >

@@ -4,11 +4,13 @@ import { NavSection } from "./NavSection";
 
 // ICONS
 import { IoCalendarNumberSharp } from "react-icons/io5";
-import { MdPeopleAlt } from "react-icons/md";
+import { MdPeopleAlt, MdContactPage } from "react-icons/md";
 import { RiContactsLine, RiDashboardLine, RiNumbersLine } from "react-icons/ri";
 import { SiGooglemessages } from "react-icons/si";
 import { TbClock } from "react-icons/tb";
 import { MdClass } from "react-icons/md";
+import { HiDocumentDownload } from "react-icons/hi";
+import { GoKey, GoBook } from "react-icons/go";
 
 export function SidebarNav() {
   return (
@@ -17,11 +19,6 @@ export function SidebarNav() {
         <NavLink href="/dashboard" icon={RiDashboardLine}>
           Dashboard
         </NavLink>
-
-        <NavLink href="/subjects" icon={MdClass}>
-          Matérias
-        </NavLink>
-
         <NavLink href="/users" icon={RiContactsLine}>
           Usuários
         </NavLink>
@@ -34,18 +31,32 @@ export function SidebarNav() {
         <NavLink href="/buletim" icon={RiNumbersLine}>
           Boletim
         </NavLink>
+        <NavLink href="/subjects" icon={MdClass}>
+          Meterial de aula
+        </NavLink>
+        <NavLink href="/diaries" icon={GoBook}>
+          Diários
+        </NavLink>
       </NavSection>
 
       <NavSection title="GERAL">
         <NavLink href="/calendar" icon={IoCalendarNumberSharp}>
           Calendário Acadêmico
         </NavLink>
-
         <NavLink href="/internship" icon={MdPeopleAlt}>
-          Estágio
+          Estágios
         </NavLink>
         <NavLink href="/messages" icon={SiGooglemessages}>
-          Caixa de mensagem
+          Caixa de Messagens
+        </NavLink>
+        <NavLink href="/messages" icon={MdContactPage}>
+          Currículo Pessoal
+        </NavLink>
+        <NavLink href="/messages" icon={HiDocumentDownload}>
+          Solicitar Adocumentos
+        </NavLink>
+        <NavLink href="/messages" icon={GoKey}>
+          Alterar Senha
         </NavLink>
       </NavSection>
     </Stack>

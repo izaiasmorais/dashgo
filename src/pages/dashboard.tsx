@@ -1,61 +1,14 @@
-import { Box, Flex, SimpleGrid, Text, theme } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  SimpleGrid,
+  Text,
+  theme,
+} from "@chakra-ui/react";
 import { Sidebar } from "../components/Sidebar";
 import { Header } from "../components/Header";
-
-import dynamic from "next/dynamic";
-import { ApexOptions } from "apexcharts";
-
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
-
-const options: ApexOptions = {
-  chart: {
-    toolbar: {
-      show: false,
-    },
-    zoom: {
-      enabled: false,
-    },
-    foreColor: theme.colors.gray[500],
-  },
-  grid: {
-    show: false,
-  },
-  dataLabels: {
-    enabled: false,
-  },
-  tooltip: {
-    enabled: false,
-  },
-  xaxis: {
-    type: "datetime",
-    axisBorder: {
-      color: theme.colors.gray[600],
-    },
-    axisTicks: {
-      color: theme.colors.gray[600],
-    },
-    categories: [
-      "2021-03-18T00:00:00.000Z",
-      "2021-03-19T00:00:00.000Z",
-      "2021-03-20T00:00:00.000Z",
-      "2021-03-21T00:00:00.000Z",
-      "2021-03-22T00:00:00.000Z",
-      "2021-03-23T00:00:00.000Z",
-      "2021-03-24T00:00:00.000Z",
-    ],
-  },
-  fill: {
-    opacity: 0.3,
-    type: "gradient",
-    gradient: {
-      shade: "dark",
-      opacityFrom: 0.7,
-      opacityTo: 0.3,
-    },
-  },
-};
-
-const series = [{ name: "series1", data: [145, 70, 248, 58, 92, 49, 140] }];
 
 export default function Dashboard() {
   return (
@@ -65,23 +18,46 @@ export default function Dashboard() {
       <Flex w="100%" my="6" maxWidth={1480} mx="auto" px="6">
         <Sidebar />
 
-        <SimpleGrid
-          flex="1"
-          gap="4"
-          minChildWidth={320}
-          alignContent="flex-start"
-        >
-          <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8" pb="4">
-            <Text>Inscritos da semana</Text>
+        <Flex direction="column" w="100%">
+          <SimpleGrid
+            gap="4"
+            mb="6"
+            minChildWidth={320}
+            alignContent="flex-start"
+            gridColumn="2fr 1fr"
+          >
+            <Grid templateColumns={["1fr", "1fr", "2fr 1fr"]} gap={4}>
+              <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+                <Text mb="6" fontWeight="bold">
+                  Welcome Back
+                </Text>
+                <Button colorScheme="purple">Go Now</Button>
+              </Box>
 
-            <Chart options={options} series={series} type="area" height={160} />
-          </Box>
+              <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+                <Text fontWeight="bold">Taxa de abertura</Text>
+              </Box>
+            </Grid>
+          </SimpleGrid>
 
-          <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
-            <Text>Taxa de abertura</Text>
-            <Chart options={options} series={series} type="area" height={160} />
-          </Box>
-        </SimpleGrid>
+          <SimpleGrid
+            flex="1"
+            gap="4"
+            minChildWidth={320}
+            alignContent="flex-start"
+            gridColumn="2fr 1fr"
+          >
+            <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+              <Text fontWeight="bold">Média geral do aluno</Text>
+            </Box>
+            <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+              <Text fontWeight="bold">Estatísticas das tarefas</Text>
+            </Box>
+            <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+              <Text fontWeight="bold">Atividades complementares</Text>
+            </Box>
+          </SimpleGrid>
+        </Flex>
       </Flex>
     </Flex>
   );
