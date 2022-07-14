@@ -4,7 +4,7 @@ import { Header } from "../../components/Header";
 
 // TABLE
 import { Table, TableContainer } from "@chakra-ui/react";
-import { TheadComponent } from "./components/Thead";
+import TheadComponent from "./components/TheadComponent";
 import SubjectsNotes from "./components/SubjectsNotes";
 
 export default function Buletim() {
