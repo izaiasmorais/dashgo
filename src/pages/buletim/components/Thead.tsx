@@ -1,6 +1,6 @@
 import { Thead, Tr, Th } from "@chakra-ui/react";
 
-export function TheadComponent() {
+export default function TheadComponent() {
   return (
     <Thead>
       <Tr>
