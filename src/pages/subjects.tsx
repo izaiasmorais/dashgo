@@ -16,7 +16,7 @@ export default function Subjects() {
     "Biologia",
     "Sociologia",
     "Educação Física",
-    "Espanhol"
+    "Espanhol",
   ];
 
   return (
