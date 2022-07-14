@@ -22,9 +22,11 @@ export default function Home() {
     resolver: yupResolver(signInFormSchema),
   });
 
-  const { errors } = formState;
+  // thats not cool
+  const { errors }: any = formState;
 
-  const handleSignIn: SubmitHandler<SignInFormData> = (values) => {
+  // typing : SubmitHandler<SignInFormData>
+  const handleSignIn = (values: any) => {
     console.log(values);
     const { email, password } = values;
     if (email === "izaiaslima356@gmail.com" && password === "123") {
