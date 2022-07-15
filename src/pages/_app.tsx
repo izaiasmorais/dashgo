@@ -9,7 +9,7 @@ import { theme } from "../styles/theme";
 
 import "../styles/global.css";
 import Head from "next/head";
-import { queryClient } from "../services/QueryClient";
+import { queryClient } from "../services/queryClient";
 
 if (process.env.NODE_ENV === "development") {
   makeServer();
