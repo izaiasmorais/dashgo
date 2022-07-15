@@ -18,7 +18,6 @@ import { IoMdExit } from "react-icons/io";
 export function MenuComponent() {
   const isWildVersion = useBreakpointValue({
     base: false,
-    md: false,
     lg: true,
   });
 
@@ -26,7 +25,6 @@ export function MenuComponent() {
     <Menu>
       <MenuButton>
         <Profile showProfileData={isWildVersion} />
-        
       </MenuButton>
 
       <MenuList bg="gray.700" borderColor="gray.700" my="3">

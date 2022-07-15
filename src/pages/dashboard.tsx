@@ -34,7 +34,7 @@ export default function Dashboard() {
                 <Button colorScheme="purple">Go Now</Button>
               </Box>
 
-              <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+              <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
                 <Text fontWeight="bold">Taxa de abertura</Text>
               </Box>
             </Grid>
@@ -47,13 +47,13 @@ export default function Dashboard() {
             alignContent="flex-start"
             gridColumn="2fr 1fr"
           >
-            <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+            <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
               <Text fontWeight="bold">Média geral do aluno</Text>
             </Box>
-            <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+            <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
               <Text fontWeight="bold">Estatísticas das tarefas</Text>
             </Box>
-            <Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
+            <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
               <Text fontWeight="bold">Atividades complementares</Text>
             </Box>
           </SimpleGrid>

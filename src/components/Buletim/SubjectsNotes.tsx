@@ -49,10 +49,10 @@ export default function SubjectsNotes({
           <Text
             px="3"
             py="1"
-            bg={color}
+            // bg={color}
             w="fit-content"
             borderRadius="10"
-            fontWeight="500"
+            fontWeight="bold"
             fontSize="12px"
           >
             {status}
