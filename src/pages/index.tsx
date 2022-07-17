@@ -29,7 +29,7 @@ export default function Home() {
   const handleSignIn = (values: any) => {
     console.log(values);
     const { email, password } = values;
-    if (email === "izaiaslima356@gmail.com" && password === "123") {
+    if (email === "izaiaslima356@gmail.com" && password === "000000") {
       router.push("/dashboard");
     }
   };

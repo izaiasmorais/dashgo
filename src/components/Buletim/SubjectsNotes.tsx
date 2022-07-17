@@ -7,9 +7,6 @@ interface SubjectsNotesProps {
   b3: number;
   b4: number;
   rec: number;
-  mg: number | string;
-  status: string;
-  color: string;
 }
 
 export default function SubjectsNotes({
@@ -19,10 +16,9 @@ export default function SubjectsNotes({
   b3,
   b4,
   rec,
-  mg,
-  status,
-  color,
 }: SubjectsNotesProps) {
+  const mg = Number(((b1 + b2 + b3 + b4) / 4).toFixed(1));
+
   return (
     <Tbody>
       <Tr>
@@ -43,19 +39,18 @@ export default function SubjectsNotes({
           {rec}
         </Td>
         <Td border="none" isNumeric>
-          {((b1 + b2 + b3 + b4) / 4).toFixed(1)}
+          {mg}
         </Td>
         <Td border="none">
           <Text
             px="3"
             py="1"
-            // bg={color}
             w="fit-content"
             borderRadius="10"
             fontWeight="bold"
             fontSize="12px"
           >
-            {status}
+            {mg >= 7 ? "APROVADO" : "REPROVADO"}
           </Text>
         </Td>
       </Tr>

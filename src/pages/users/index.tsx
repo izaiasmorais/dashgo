@@ -23,7 +23,7 @@ import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import { useUsers } from "../../services/hooks/useUsers";
 import NextLink from "next/link";
-import { queryClient } from "../../services/QueryClient";
+import { queryClient } from "../../services/queryClient";
 import { api } from "../../services/api";
 
 interface User {
@@ -65,7 +65,7 @@ export default function UserList() {
 
         <Box flex="1" borderRadius={8} bg="gray.800" p="8">
           <Flex mb="8" justify="space-between" align="center">
-            <Heading size="lg" fontWeight="normal">
+            <Heading fontSize="1.5rem" fontWeight="500">
               Usuários
               {!isLoading && isRefetching && (
                 <Spinner size="sm" color="gray.500" ml="4" />

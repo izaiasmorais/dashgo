@@ -20,10 +20,10 @@ export function Header() {
       as="header"
       w="100%"
       maxWidth={1480}
-      h="20"
       mx="auto"
       mt="4"
       px="6"
+      py="3"
       align="center"
     >
       {!isWideVersion && (

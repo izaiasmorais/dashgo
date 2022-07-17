@@ -7,6 +7,8 @@ import { Table, TableContainer } from "@chakra-ui/react";
 import TheadComponent from "../components/Buletim/TheadComponent";
 import SubjectsNotes from "../components/Buletim/SubjectsNotes";
 
+import { notes } from "../services/notes/notes";
+
 export default function Buletim() {
   return (
     <Flex direction="column" h="100vh">
@@ -22,9 +24,10 @@ export default function Buletim() {
             minChildWidth={320}
             alignContent="flex-start"
             gridColumn="2fr 1fr"
+            maxWidth={1144}
           >
             <Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
-              <Text mb="6" fontWeight="bold" fontSize="24px">
+              <Text mb="6" fontWeight="500" fontSize="24px">
                 Boletim
               </Text>
 
@@ -32,41 +35,19 @@ export default function Buletim() {
                 <Table variant="simple">
                   <TheadComponent />
 
-                  <SubjectsNotes
-                    subject="PORTUGUÊS"
-                    b1={9.5}
-                    b2={10.0}
-                    b3={7.5}
-                    b4={6}
-                    rec={8}
-                    mg={8.75}
-                    color="#2ab654"
-                    status="APROVADO"
-                  />
-
-                  <SubjectsNotes
-                    subject="FÍSICA"
-                    b1={7}
-                    b2={9.0}
-                    b3={9.5}
-                    b4={10.0}
-                    rec={7.8}
-                    mg={"--"}
-                    color="#2ab654"
-                    status="APROVADO"
-                  />
-
-                  <SubjectsNotes
-                    subject="HISTÓRIA"
-                    b1={7.5}
-                    b2={7}
-                    b3={6.5}
-                    b4={4.8}
-                    rec={5}
-                    mg={"6"}
-                    color="#a92520"
-                    status="REPROVADO"
-                  />
+                  {notes.map((note) => {
+                    return (
+                      <SubjectsNotes
+                        key={note.subject}
+                        subject={note.subject}
+                        b1={note.b1}
+                        b2={note.b2}
+                        b3={note.b3}
+                        b4={note.b4}
+                        rec={note.rec}
+                      />
+                    );
+                  })}
                 </Table>
               </TableContainer>
             </Box>
