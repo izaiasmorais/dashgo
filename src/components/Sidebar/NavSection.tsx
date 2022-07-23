@@ -1,6 +1,5 @@
-import { Box, Stack, Icon, Text, Link } from '@chakra-ui/react'
+import { Box, Stack, Text } from '@chakra-ui/react'
 import { ReactNode } from 'react'
-import { RiDashboardLine, RiContactsLine } from 'react-icons/ri'
 
 interface Props {
   title: string

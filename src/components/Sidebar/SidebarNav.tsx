@@ -47,13 +47,13 @@ export function SidebarNav() {
           Estágios
         </NavLink>
         <NavLink href="/messages" icon={SiGooglemessages}>
-          Caixa de Messagens
+          Caixa de Mensagens
         </NavLink>
         <NavLink href="/messages" icon={MdContactPage}>
           Currículo Pessoal
         </NavLink>
         <NavLink href="/messages" icon={HiDocumentDownload}>
-          Solicitar Adocumentos
+          Solicitar Documentos
         </NavLink>
         <NavLink href="/messages" icon={GoKey}>
           Alterar Senha
