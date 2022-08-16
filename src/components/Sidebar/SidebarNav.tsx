@@ -32,7 +32,7 @@ export function SidebarNav() {
           Boletim
         </NavLink>
         <NavLink href="/subjects" icon={MdClass}>
-          Meterial de aula
+          Material de aula
         </NavLink>
         <NavLink href="/diaries" icon={GoBook}>
           Diários
