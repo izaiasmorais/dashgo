@@ -6,7 +6,7 @@
 
 ## 📃 Sobre o projeto.
 
-Um site feito baseado nos "Q Acadêmicos" das instituições federais do Brasil. Um dashboard escolar, com diversas funcionalidades para alunos, professores e usuários no geral.
+O site foi criado baseando-se nos dashboards escolares das instituições federais do Brasil. Um dashboard escolar, com diversas funcionalidades para alunos, professores e usuários no geral.
 
 ### Funcionalidades
 
@@ -31,15 +31,10 @@ $ git clone https://github.com/IzaiasMorais/q-academico.git && cd q-academico
 ```
 
 ```bash
-# Install the dependecies
+# Instalando dependências
 $ npm i
 
-# Run the project
+# Rodando projeto
 $ npm run dev
 
 ```
-
-
-
-
-
