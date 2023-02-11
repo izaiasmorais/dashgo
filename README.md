@@ -16,9 +16,9 @@ O projeto foi desenvolvido na trilha ReactJS 2021 da Rocketseat, e visa ser um d
 
 ### Funcionalidades
 
-- Interface responsiva.
-- Validação de formulários.
-- Controle de cache e paginação.
+- [x] Interface responsiva.
+- [ ] Validação de formulários.
+- [ ] Controle de cache e paginação.
 
 ## 🚀 Tecnologias
 
