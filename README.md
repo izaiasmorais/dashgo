@@ -4,6 +4,12 @@
 
 <p align="center">Um dashboard completo feito em Next.js + ChakraUI.</p>
 
+![image](https://user-images.githubusercontent.com/53953937/218267030-7d33e728-e847-4183-a4ee-1f5d348a84e9.png)
+
+<img src="https://img.shields.io/static/v1?label=LICENSE&message=MIT&color=805AD5&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=STATUS&message=DEVELOPING&color=805AD5&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=NODE&message=V16.15.0&color=805AD5&style=for-the-badge"/>
+
+
+
 ## 📃 Sobre o projeto.
 
 O projeto foi desenvolvido na trilha ReactJS 2021 da Rocketseat, e visa ser um dashboard responsivo e altamente perfomático construído a base de tecnologias modernas, onde são explorados assuntos como controle de cache e paginação com react-query, construção de interfaces responsivas com ChakraUI, validação de formulários com react-hook-form, dentre outros.
