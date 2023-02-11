@@ -1,33 +1,31 @@
 <h1 align='center'>
-   🖥 Q Acadêmico
+   🖥 Dashgo
 </h1>
 
-<p align="center">Um dashboard completo para instituições de ensino.</p>
+<p align="center">Um dashboard completo feito em Next.js + ChakraUI.</p>
 
 ## 📃 Sobre o projeto.
 
-O site foi criado baseando-se nos dashboards escolares das instituições federais do Brasil. Um dashboard escolar, com diversas funcionalidades para alunos, professores e usuários no geral.
+O projeto foi desenvolvido na trilha ReactJS 2021 da Rocketseat, e visa ser um dashboard responsivo e altamente perfomático construído a base de tecnologias modernas, onde são explorados assuntos como controle de cache e paginação com react-query, construção de interfaces responsivas com ChakraUI, validação de formulários com react-hook-form, dentre outros.
 
 ### Funcionalidades
 
-- Autenticação com JWT/SSR.
-- Listagem de atividades postadas pelos professores de cada matéria.
-- Horário individual de cada turma.
-- Calendário acadêmico geral da instituição.
-- Boletim de cada aluno.
-- Aba para listar vagas de estágios disponíveis para os alunos.
+- Interface responsiva.
+- Validação de formulários.
+- Controle de cache e paginação.
 
 ## 🚀 Tecnologias
 
 - [Next.js](https://nextjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Chakra-UI](https://chakra-ui.com/)
-- [Nextjs-progressbar](https://www.npmjs.com/package/nextjs-progressbar)
+- [ChakraUI](https://chakra-ui.com/)
+- [React Query](https://react-query-v3.tanstack.com/overview)
+- [Nextjs progressbar](https://www.npmjs.com/package/nextjs-progressbar)
 
 ## 💻 Clonando projeto
 
 ```bash
-$ git clone https://github.com/IzaiasMorais/q-academico.git && cd q-academico
+$ git clone https://github.com/izaiasmorais/dashgo.git && cd dashgo
 ```
 
 ```bash
