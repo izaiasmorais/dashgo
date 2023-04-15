@@ -2,7 +2,7 @@
    🖥 Dashgo
 </h1>
 
-<p align="center">Um dashboard completo feito em Next.js + ChakraUI.</p>
+<p align="center">Um dashboard responsivo feito em Next.js + ChakraUI.</p>
 
 ![image](https://user-images.githubusercontent.com/53953937/218267030-7d33e728-e847-4183-a4ee-1f5d348a84e9.png)
 
@@ -12,7 +12,7 @@
 
 ## 📃 Sobre o projeto.
 
-O projeto foi desenvolvido na trilha ReactJS 2021 da Rocketseat, e visa ser um dashboard responsivo e altamente perfomático construído a base de tecnologias modernas, onde são explorados assuntos como controle de cache e paginação com react-query, construção de interfaces responsivas com ChakraUI, validação de formulários com react-hook-form, dentre outros.
+O projeto foi desenvolvido na trilha ReactJS 2021 da Rocketseat, e visa ser um dashboard responsivo e perfomático construído a base de tecnologias modernas, onde são explorados assuntos como controle de cache e paginação com react-query, construção de interfaces responsivas com ChakraUI, validação de formulários com react-hook-form, dentre outros.
 
 ### Funcionalidades
 
