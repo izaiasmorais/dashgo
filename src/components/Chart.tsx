@@ -1,6 +1,8 @@
-import React from "react";
-import ReactApexChart from "react-apexcharts";
+import dynamic from "next/dynamic";
 import { theme } from "../styles/theme";
+const ReactApexChart = dynamic(() => import("react-apexcharts"), {
+	ssr: false,
+});
 
 export function Chart() {
 	const options = {

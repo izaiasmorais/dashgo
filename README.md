@@ -8,8 +8,6 @@
 
 <img src="https://img.shields.io/static/v1?label=LICENSE&message=MIT&color=805AD5&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=STATUS&message=DEVELOPING&color=805AD5&style=for-the-badge"/> <img src="https://img.shields.io/static/v1?label=NODE&message=V16.15.0&color=805AD5&style=for-the-badge"/>
 
-
-
 ## 📃 Sobre o projeto.
 
 O projeto foi desenvolvido na trilha ReactJS 2021 da Rocketseat, e visa ser um dashboard responsivo e perfomático construído a base de tecnologias modernas, onde são explorados assuntos como controle de cache e paginação com react-query, construção de interfaces responsivas com ChakraUI, validação de formulários com react-hook-form, dentre outros.

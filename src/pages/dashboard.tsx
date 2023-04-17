@@ -28,7 +28,9 @@ export default function Dashboard() {
 							borderRadius={8}
 						>
 							<Text>Recebimentos do mês</Text>
-							<Chart />
+							{/* <Flex w="100%"> */}
+								<Chart />
+							{/* </Flex> */}
 						</Flex>
 
 						<Flex

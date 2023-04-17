@@ -22,9 +22,9 @@ import { Header } from "../../components/Header";
 import { Pagination } from "../../components/Pagination";
 import { Sidebar } from "../../components/Sidebar";
 import { useUsers } from "../../services/hooks/useUsers";
-import NextLink from "next/link";
 import { queryClient } from "../../services/react-query";
 import { api } from "../../services/axios";
+import NextLink from "next/link";
 
 interface User {
 	id: string;
