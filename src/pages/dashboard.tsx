@@ -1,14 +1,7 @@
-import {
-	Box,
-	Button,
-	Flex,
-	Grid,
-	SimpleGrid,
-	Text,
-	theme,
-} from "@chakra-ui/react";
+import { Flex, SimpleGrid, Text } from "@chakra-ui/react";
 import { Sidebar } from "../components/Sidebar";
 import { Header } from "../components/Header";
+import { Chart } from "../components/Chart";
 
 export default function Dashboard() {
 	return (
@@ -26,36 +19,29 @@ export default function Dashboard() {
 						alignContent="flex-start"
 						gridColumn="2fr 1fr"
 					>
-						<Grid templateColumns={["1fr", "1fr", "2fr 1fr"]} gap={4}>
-							<Box p={["6", "8"]} bgColor="gray.700" borderRadius="8">
-								<Text mb="6" fontWeight="bold">
-									Welcome Back
-								</Text>
-								<Button colorScheme="purple">Go Now</Button>
-							</Box>
+						<Flex
+							bg="gray.800"
+							direction="column"
+							p="4"
+							fontWeight={500}
+							gap={2}
+							borderRadius={8}
+						>
+							<Text>Recebimentos do mês</Text>
+							<Chart />
+						</Flex>
 
-							<Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
-								<Text fontWeight="bold">Taxa de abertura</Text>
-							</Box>
-						</Grid>
-					</SimpleGrid>
-
-					<SimpleGrid
-						flex="1"
-						gap="4"
-						minChildWidth={320}
-						alignContent="flex-start"
-						gridColumn="2fr 1fr"
-					>
-						<Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
-							<Text fontWeight="bold">Média geral do aluno</Text>
-						</Box>
-						<Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
-							<Text fontWeight="bold">Estatísticas das tarefas</Text>
-						</Box>
-						<Box p={["6", "8"]} bgColor="gray.800" borderRadius="8">
-							<Text fontWeight="bold">Atividades complementares</Text>
-						</Box>
+						<Flex
+							bg="gray.800"
+							direction="column"
+							p="4"
+							fontWeight={500}
+							gap={2}
+							borderRadius={8}
+						>
+							<Text>Fluxo de investimento</Text>
+							<Chart />
+						</Flex>
 					</SimpleGrid>
 				</Flex>
 			</Flex>

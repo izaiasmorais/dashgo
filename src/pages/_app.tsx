@@ -6,10 +6,10 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import { SidebarDrawerContextProvider } from "../contexts/SidebarDrawerContext";
 import { makeServer } from "../services/mirage";
 import { theme } from "../styles/theme";
+import { queryClient } from "../services/react-query";
+import Head from "next/head";
 
 import "../styles/global.css";
-import Head from "next/head";
-import { queryClient } from "../services/react-query";
 
 if (process.env.NODE_ENV === "development") {
 	makeServer();
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<ChakraProvider theme={theme}>
 				<SidebarDrawerContextProvider>
 					<Head>
-						<title>Q Acadêmico</title>
+						<title>dashgo</title>
 					</Head>
 					<NextNProgress color="#ff0090" />
 					<Component {...pageProps} />
