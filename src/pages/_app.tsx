@@ -9,27 +9,27 @@ import { theme } from "../styles/theme";
 
 import "../styles/global.css";
 import Head from "next/head";
-import { queryClient } from "../services/queryClient";
+import { queryClient } from "../services/react-query";
 
 if (process.env.NODE_ENV === "development") {
-  makeServer();
+	makeServer();
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <ChakraProvider theme={theme}>
-        <SidebarDrawerContextProvider>
-          <Head>
-            <title>Q Acadêmico</title>
-          </Head>
-          <NextNProgress color="#ff0090" />
-          <Component {...pageProps} />
-        </SidebarDrawerContextProvider>
-      </ChakraProvider>
-      <ReactQueryDevtools />
-    </QueryClientProvider>
-  );
+	return (
+		<QueryClientProvider client={queryClient}>
+			<ChakraProvider theme={theme}>
+				<SidebarDrawerContextProvider>
+					<Head>
+						<title>Q Acadêmico</title>
+					</Head>
+					<NextNProgress color="#ff0090" />
+					<Component {...pageProps} />
+				</SidebarDrawerContextProvider>
+			</ChakraProvider>
+			<ReactQueryDevtools />
+		</QueryClientProvider>
+	);
 }
 
 export default MyApp;
