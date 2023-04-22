@@ -1,9 +1,16 @@
 import { Button, Flex, Stack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { Input } from "../components/Form/Input";
+import { useForm } from "react-hook-form";
 
 export default function Home() {
 	const router = useRouter();
+	const {register, handleSubmit} = useForm()
+
+	function handleSignIn() {
+		
+	}
+
 
 	return (
 		<Flex w="100vw" h="100vh" alignItems="center" justifyContent="center">
