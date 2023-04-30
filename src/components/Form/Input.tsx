@@ -32,8 +32,8 @@ const InputComponent: ForwardRefRenderFunction<HTMLInputElement, Props> = (
 				focusBorderColor="pink.500"
 				bgColor="gray.900"
 				variant="filled"
-				_hover={{ bgColor: "gray.900" }}
 				size="lg"
+				_hover={{ bgColor: "gray.900" }}
 				{...rest}
 			/>
 			{error && <FormErrorMessage>{error.message}</FormErrorMessage>}
