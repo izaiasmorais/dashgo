@@ -1,12 +1,11 @@
-import { ChakraProvider } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
-import NextNProgress from "nextjs-progressbar";
-import { QueryClientProvider } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import { SidebarDrawerContextProvider } from "../contexts/SidebarDrawerContext";
+import { QueryClientProvider } from "react-query";
+import { ChakraProvider } from "@chakra-ui/react";
+import { queryClient } from "../services/react-query";
 import { makeServer } from "../services/mirage";
 import { theme } from "../styles/theme";
-import { queryClient } from "../services/react-query";
+import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 
 import "../styles/global.css";
@@ -27,7 +26,6 @@ function MyApp({ Component, pageProps }: AppProps) {
 					<Component {...pageProps} />
 				</SidebarDrawerContextProvider>
 			</ChakraProvider>
-			{/* <ReactQueryDevtools /> */}
 		</QueryClientProvider>
 	);
 }

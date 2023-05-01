@@ -6,12 +6,12 @@ import {
 	InputProps,
 } from "@chakra-ui/react";
 import { forwardRef, ForwardRefRenderFunction } from "react";
-import { FieldError } from "react-hook-form";
+import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
 
 interface Props extends InputProps {
 	name: string;
 	label?: string;
-	error?: FieldError;
+	error?: FieldError | Merge<FieldError, FieldErrorsImpl<any>>;
 }
 
 const InputComponent: ForwardRefRenderFunction<HTMLInputElement, Props> = (

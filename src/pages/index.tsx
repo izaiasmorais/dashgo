@@ -1,8 +1,9 @@
-import { Button, Flex, Stack, Text } from "@chakra-ui/react";
+import { Button, Flex, Stack } from "@chakra-ui/react";
 import { Input } from "../components/Form/Input";
 import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useRouter } from "next/router";
 
 type SignInFormData = {
 	email: string;
@@ -14,10 +15,11 @@ const signInFormSchema = yup.object().shape({
 		.string()
 		.required("Email Obrigatório")
 		.email("Digite um endereço de email válido"),
-	password: yup.string().required('Senha obrigatória'),
+	password: yup.string().required("Senha obrigatória"),
 });
 
 export default function Home() {
+	const router = useRouter();
 	const {
 		register,
 		handleSubmit,
@@ -29,7 +31,7 @@ export default function Home() {
 	const handleSignIn: SubmitHandler<SignInFormData> = async (values, event) => {
 		await new Promise((resolve) => setTimeout(resolve, 2000));
 
-		console.log(values);
+		router.push("/dashboard");
 	};
 
 	return (
