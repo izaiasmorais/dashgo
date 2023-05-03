@@ -1,7 +1,7 @@
 import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
-import { Sidebar } from "../components/Sidebar";
 import { Header } from "../components/Header";
-import { Chart } from "../components/Chart";
+import { ApexChart } from "../components/Chart";
+import { Sidebar } from "../components/Sidebar";
 
 export default function Dashboard() {
 	return (
@@ -19,15 +19,15 @@ export default function Dashboard() {
 				>
 					<Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
 						<Text fontSize="lg" mb="4">
-							Vendas do mês
+							Inscritos da semana
 						</Text>
-						<Chart />
+						<ApexChart />
 					</Box>
 					<Box p={["6", "8"]} bg="gray.800" borderRadius={8} pb="4">
 						<Text fontSize="lg" mb="4">
 							Taxa de abertura
 						</Text>
-						<Chart />
+						<ApexChart />
 					</Box>
 				</SimpleGrid>
 			</Flex>
