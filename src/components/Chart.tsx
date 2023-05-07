@@ -55,5 +55,13 @@ export function ApexChart() {
 
 	const series = [{ name: "series1", data: [31, 120, 10, 28, 51, 18, 109] }];
 
-	return <Chart options={options} series={series} type="area" height={160} />;
+	return (
+		<Chart
+			options={options}
+			series={series}
+			type="area"
+			height={160}
+			width={500}
+		/>
+	);
 }
