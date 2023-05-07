@@ -14,20 +14,15 @@ import {
 	Tr,
 	useBreakpointValue,
 	Link,
+	Spinner,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
+import { Pagination } from "../../components/Pagination";
+import { useUsers } from "../../services/hooks/useUsers";
 import NextLink from "next/link";
-import axios from "axios";
-
-interface IUser {
-	id: string;
-	name: string;
-	email: string;
-	createdAt: string;
-}
 
 export default function UserList() {
 	const [mounted, setMounted] = useState(false);
@@ -41,11 +36,7 @@ export default function UserList() {
 		lg: true,
 	});
 
-	useEffect(() => {
-		axios
-			.get("http://localhost:3000/api/users")
-			.then((response) => console.log(response.data.users));
-	}, []);
+	const { data, isLoading, isRefetching, error } = useUsers(1);
 
 	if (mounted) {
 		return (
@@ -59,9 +50,9 @@ export default function UserList() {
 						<Flex mb="8" justify="space-between" align="center">
 							<Heading fontSize="1.5rem" fontWeight="500">
 								Usuários
-								{/* {!isLoading && isRefetching && (
-								<Spinner size="sm" color="gray.500" ml="4" />
-							)} */}
+								{!isLoading && isRefetching && (
+									<Spinner size="sm" color="gray.500" ml="4" />
+								)}
 							</Heading>
 
 							<NextLink href="/users/create" passHref>
@@ -77,48 +68,87 @@ export default function UserList() {
 							</NextLink>
 						</Flex>
 
-						<Table colorScheme="whiteAlpha">
-							<Thead>
-								<Tr>
-									<Th px={["0", "4", "6"]} color="gray.300" w="8">
-										<Checkbox colorScheme="pink" />
-									</Th>
-									<Th color="gray.500">Usuário</Th>
-									{isWildVersion && <Th color="gray.500">Data de cadastro</Th>}
-									<Th w="8"></Th>
-								</Tr>
-							</Thead>
+						{isLoading && (
+							<Flex justify="center">
+								<Spinner />
+							</Flex>
+						)}
 
-							<Tbody>
-								<Tr key="sdcfsdf">
-									<Td px={["0", "4", "6"]}>
-										<Checkbox colorScheme="pink" />
-									</Td>
-									<Td>
-										<Box>
-											<Link color="purple.400">
-												<Text fontWeight="bold">Izaías Lima</Text>
-											</Link>
-											<Text fontSize="sm" color="gray.300">
-												izaiaslima356@gmail.com
-											</Text>
-										</Box>
-									</Td>
-									{isWildVersion && <Td>15/07/2023</Td>}
-									<Td>
-										<Button
-											as="a"
-											size="sm"
-											fontSize="sm"
-											colorScheme="purple"
-											leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
-										>
-											Editar
-										</Button>
-									</Td>
-								</Tr>
-							</Tbody>
-						</Table>
+						{error && (
+							<Flex justify="center">Falha ao obiter dados dos usuários.</Flex>
+						)}
+
+						{data && (
+							<>
+								<Table colorScheme="whiteAlpha">
+									<Thead>
+										<Tr>
+											<Th
+												px={["0", "4", "6"]}
+												color="gray.300"
+												w="8"
+												borderColor="gray.700"
+											>
+												<Checkbox colorScheme="pink" />
+											</Th>
+											<Th color="gray.500" borderColor="gray.700">
+												Usuário
+											</Th>
+											{isWildVersion && (
+												<Th color="gray.500" borderColor="gray.700">
+													Data de cadastro
+												</Th>
+											)}
+											<Th w="8" borderColor="gray.700"></Th>
+										</Tr>
+									</Thead>
+
+									<Tbody>
+										{data.users.map((user) => {
+											return (
+												<Tr key="sdcfsdf">
+													<Td px={["0", "4", "6"]} borderColor="gray.700">
+														<Checkbox colorScheme="pink" />
+													</Td>
+													<Td borderColor="gray.700">
+														<Box>
+															<Link color="purple.400">
+																<Text fontWeight="bold">{user.name}</Text>
+															</Link>
+															<Text fontSize="sm" color="gray.300">
+																{user.email}
+															</Text>
+														</Box>
+													</Td>
+													{isWildVersion && (
+														<Td borderColor="gray.700">{user.createdAt}</Td>
+													)}
+													<Td borderColor="gray.700">
+														<Button
+															as="a"
+															size="sm"
+															fontSize="sm"
+															colorScheme="purple"
+															leftIcon={
+																<Icon as={RiPencilLine} fontSize="16" />
+															}
+														>
+															Editar
+														</Button>
+													</Td>
+												</Tr>
+											);
+										})}
+									</Tbody>
+								</Table>
+
+								<Pagination
+									totalCountOfRegisters={data.users.length}
+									currentPage={1}
+									onPageChange={() => {}}
+								/>
+							</>
+						)}
 					</Box>
 				</Flex>
 			</Box>
