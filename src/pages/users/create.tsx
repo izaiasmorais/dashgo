@@ -12,9 +12,9 @@ import Link from "next/link";
 import { Input } from "../../components/Form/Input";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
-import * as yup from "yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import * as yup from "yup";
 
 type CreateUserFormData = {
 	name: string;
@@ -52,7 +52,7 @@ export default function CreateUser() {
 	) => {
 		await new Promise((resolve) => setTimeout(resolve, 2000));
 
-		console.log(values);
+		console.log();
 	};
 
 	return (

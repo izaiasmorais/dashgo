@@ -38,6 +38,9 @@ export default function UserList() {
 
 	const { data, isLoading, isRefetching, error } = useUsers(1);
 
+	console.log(data?.users);
+
+
 	if (mounted) {
 		return (
 			<Box>
@@ -143,7 +146,7 @@ export default function UserList() {
 								</Table>
 
 								<Pagination
-									totalCountOfRegisters={data.users.length}
+									totalCountOfRegisters={data.totalCount}
 									currentPage={1}
 									onPageChange={() => {}}
 								/>
