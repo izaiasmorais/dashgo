@@ -21,10 +21,11 @@ import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import { Pagination } from "../../components/Pagination";
-import { useUsers } from "../../services/hooks/useUsers";
+import { useUsers } from "../../hooks/useUsers";
 import NextLink from "next/link";
 
 export default function UserList() {
+	const [page, setPage] = useState(1);
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
@@ -36,10 +37,7 @@ export default function UserList() {
 		lg: true,
 	});
 
-	const { data, isLoading, isRefetching, error } = useUsers(1);
-
-	console.log(data?.users);
-
+	const { data, isLoading, isRefetching, error } = useUsers(page);
 
 	if (mounted) {
 		return (
@@ -147,8 +145,9 @@ export default function UserList() {
 
 								<Pagination
 									totalCountOfRegisters={data.totalCount}
-									currentPage={1}
-									onPageChange={() => {}}
+									registerPerPage={5}
+									currentPage={page}
+									onPageChange={setPage}
 								/>
 							</>
 						)}

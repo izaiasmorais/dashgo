@@ -3,7 +3,7 @@ import { PaginationItem } from "./PaginationItem";
 
 interface PaginationProps {
 	totalCountOfRegisters: number;
-	registerPerPage?: number;
+	registerPerPage: number;
 	currentPage?: number;
 	onPageChange: (page: number) => void;
 }
@@ -20,7 +20,7 @@ function generatePagesArray(from: number, to: number) {
 
 export function Pagination({
 	totalCountOfRegisters,
-	registerPerPage = 10,
+	registerPerPage,
 	currentPage = 1,
 	onPageChange,
 }: PaginationProps) {

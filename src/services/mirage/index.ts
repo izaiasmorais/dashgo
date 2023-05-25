@@ -38,7 +38,7 @@ export function makeServer() {
 		},
 
 		seeds(server) {
-			server.createList("user", 10);
+			server.createList("user", 50);
 		},
 
 		routes() {
@@ -47,7 +47,7 @@ export function makeServer() {
 
 			this.get("/users", function (schema, request) {
 				//@ts-ignore
-				const { page = 1, per_page = 10 } = request.queryParams;
+				const { page = 1, per_page = 5 } = request.queryParams;
 
 				const total = schema.all("user").length;
 
