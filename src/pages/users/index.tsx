@@ -23,6 +23,8 @@ import { Sidebar } from "../../components/Sidebar";
 import { Pagination } from "../../components/Pagination";
 import { useUsers } from "../../hooks/useUsers";
 import NextLink from "next/link";
+import { queryClient } from "../../services/react-query";
+import { api } from "../../services/axios";
 
 export default function UserList() {
 	const [page, setPage] = useState(1);
@@ -38,6 +40,20 @@ export default function UserList() {
 	});
 
 	const { data, isLoading, isRefetching, error } = useUsers(page);
+
+	async function handlePrefecthUser(userId: number) {
+		await queryClient.prefetchQuery(
+			["user", userId],
+			async () => {
+				const response = await api.get(`user/${userId}`);
+
+				return response.data;
+			},
+			{
+				staleTime: 1000 * 60 * 10,
+			}
+		);
+	}
 
 	if (mounted) {
 		return (
@@ -113,7 +129,10 @@ export default function UserList() {
 													</Td>
 													<Td borderColor="gray.700">
 														<Box>
-															<Link color="purple.400">
+															<Link
+																color="purple.400"
+																onMouseEnter={() => handlePrefecthUser(user.id)}
+															>
 																<Text fontWeight="bold">{user.name}</Text>
 															</Link>
 															<Text fontSize="sm" color="gray.300">
