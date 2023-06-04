@@ -13,6 +13,9 @@ dependencies:
   '@faker-js/faker':
     specifier: ^7.6.0
     version: 7.6.0
+  '@hookform/error-message':
+    specifier: ^2.0.1
+    version: 2.0.1(react-dom@18.2.0)(react-hook-form@7.43.9)(react@18.2.0)
   '@hookform/resolvers':
     specifier: ^3.1.0
     version: 3.1.0(react-hook-form@7.43.9)
@@ -1365,6 +1368,18 @@ packages:
   /@faker-js/faker@7.6.0:
     resolution: {integrity: sha512-XK6BTq1NDMo9Xqw/YkYyGjSsg44fbNwYRx7QK2CuoQgyy+f1rrTDHoExVM5PsyXCtfl2vs2vVJ0MN0yN6LppRw==}
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: false
+
+  /@hookform/error-message@2.0.1(react-dom@18.2.0)(react-hook-form@7.43.9)(react@18.2.0):
+    resolution: {integrity: sha512-U410sAr92xgxT1idlu9WWOVjndxLdgPUHEB8Schr27C9eh7/xUnITWpCMF93s+lGiG++D4JnbSnrb5A21AdSNg==}
+    peerDependencies:
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
+      react-hook-form: ^7.0.0
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-hook-form: 7.43.9(react@18.2.0)
     dev: false
 
   /@hookform/resolvers@3.1.0(react-hook-form@7.43.9):
