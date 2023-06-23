@@ -50,15 +50,17 @@ export default function Home() {
 					<Input
 						type="email"
 						label="Email"
-						error={errors.email}
 						{...register("email")}
+						error={errors === null ? undefined : String(errors.email?.message)}
 					/>
 
 					<Input
 						type="password"
 						label="Senha"
-						error={errors.password}
 						{...register("password")}
+						error={
+							errors === null ? undefined : String(errors.password?.message)
+						}
 					/>
 				</Stack>
 				<Button
